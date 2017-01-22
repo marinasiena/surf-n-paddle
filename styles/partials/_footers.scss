@@ -1,0 +1,74 @@
+//Footer at bottom of page
+.footer-page {
+  @include clearboth;
+  background: $dkblue;
+  @include bottomround;
+  color: $ltgray;
+  margin-bottom:1rem;
+  padding:2rem;
+  text-transform:capitalize;
+  @include bp(medium) {
+    border-radius: 0;
+    margin: 0;
+    height: inherit;
+    .footer-page-container {
+      text-align: center;
+      margin: 1rem auto;
+      margin-top:4rem;
+    }
+  }
+  .footer-page-container {
+    width: 40%;
+  }
+  img {
+    @include is-icon;
+    transform: translateY(30%);
+    @include bp(medium) {
+      transform: translateY(0);
+      display: block;
+      margin: 0 auto;
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+//Footer on main content
+.footer-main {
+  @include space-after;
+  color:$white;
+  font-size: $xsmall;
+  margin-right:15%;
+  @include bp(large) {
+    font-size: $xsmall;
+  }
+}
+.footer-main ul {
+  overflow:hidden;
+  width:100%;
+  li {
+    align-items: center;
+    background: $ltgray;
+    display:flex;
+    float:left;
+    margin-right:5px;
+    &:hover {
+      background: $mdblue;
+      }
+    }
+  i {
+    background:$dkgray;
+    padding: .3rem;
+    @include bp(large) {
+      &:hover {
+        background: $mdblue;
+      }
+    }
+  }
+  span {
+    padding: 0 .5rem;
+    @include bp(large) {
+      display:none;
+    }
+  }
+}

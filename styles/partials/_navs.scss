@@ -1,0 +1,127 @@
+//Primary nav (4 levels is max!)
+.nav-primary {
+  bottom:2rem;
+  position:absolute;
+  right:0;
+  width:50%;
+  ul {
+    background:$dkblue;
+    display:flex;
+    flex-wrap:nowrap;
+    height:auto;
+    justify-content:center;
+    @include bp(medium) {
+      flex-wrap: wrap;
+    }
+    li {
+      border-right:$ltgray 1px solid;
+      color:$ltgray;
+      font-size:0.75rem;
+      padding:0 .5rem;
+      transition:$standard;
+    &:last-child {
+      border-right:none;
+      }
+    &:hover {
+      @include nav-hover;
+      }
+    @include bp(medium) {
+      font-size: $small;
+      }
+    }
+  }
+  @include bp(medium) {
+    bottom: 35vh;
+    width:100%;
+  }
+  @include bp(tiny) {
+    bottom: 37vh;
+    width:100%;
+  }
+}
+
+
+
+//Blog nav
+.nav-blog {
+  color:$dkblue;
+  left:0;
+  margin-left:10%;
+  overflow:hidden;
+  padding:1rem;
+  position:absolute;
+  top:0;
+  z-index:5;
+  @include bp(mobile) {
+    top:0.75%;
+    left:40%;
+    margin-left:0;
+  }
+  img {
+    @include is-icon;
+    float:left;
+    transform:translateY(30%);
+    @include bp(mobile) {
+      height:45px;
+      width:45px;
+    }
+    @include bp(tiny) {
+      display:none;
+    }
+  }
+  span {
+    float:left;
+    margin:1rem 0.5rem;
+    padding:0 0.5rem;
+    text-transform:uppercase;
+    transition:$standard;
+    //uncomment below to add bg for aria compliance
+    // @include ariabg;
+    &:hover {
+      @include nav-hover;
+    }
+    @include bp(mobile) {
+      display:none;
+    }
+  }
+}
+
+//Search nav
+.nav-search {
+  @extend .nav-blog;
+  margin-left:0;
+  margin-right:10%;
+  left:inherit;
+  right:0;
+  @include bp(mobile) {
+    width:100%;
+    margin: 0 auto;
+    top:0;
+    left:0;
+  }
+  ul {
+    width:100%;
+    text-align:right;
+    @include bp(mobile) {
+      text-align:center;
+    }
+    li {
+      display:inline-block;
+      font-family:$robo;
+      font-weight:800;
+      padding:0 1rem;
+      text-transform: uppercase;
+      transition: $standard;
+      //uncomment below to add bg for aria compliance
+      // @include ariabg;
+      i {
+        padding-left:3px;
+      }
+      &:hover {
+        @include nav-hover;
+      }
+    }
+
+  }
+
+}

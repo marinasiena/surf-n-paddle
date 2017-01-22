@@ -1,0 +1,37 @@
+//Main article
+.article-main cite {
+  color:$ltgray;
+  display: block;
+  font-size:$xsmall;
+  @include space-after;
+  img {
+    @include bp(mobile) {
+      display:none;
+      }
+  }
+  span {
+  &:first-of-type {
+    color:$mdblue;
+    font-weight: 700;
+    @include bp(mobile) {
+      display:none;
+      }
+    }
+  }
+}
+.article-main img {
+  @include is-icon;
+  @include is-round;
+  transform: translateY(30%);
+}
+.article-main p {
+  @include space-after;
+}
+.article-main blockquote {
+  @include space-after;
+  border-left: 3px solid $ltgray;
+  color:$mdblue;
+  font-size: $medium;
+  padding-left:1rem;
+  text-transform: uppercase;
+}

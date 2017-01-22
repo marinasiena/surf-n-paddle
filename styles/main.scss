@@ -1,0 +1,82 @@
+@import 'partials/reset';
+@import 'bourbon/bourbon';
+@import 'partials/styling';
+@import 'partials/images';
+@import 'partials/hero';
+@import 'partials/navs';
+@import 'partials/footers';
+@import 'partials/articles';
+@import 'partials/sidebar';
+@import 'partials/posts';
+
+
+//Common styles
+body {
+  color:#333;
+  font-family: $opensans;
+  font-size: 16px;
+  line-height: 1.6;
+  margin:0 auto;
+  position:relative;
+  width:90%;
+  @include bp(mobile) {
+    width:100%;
+  }
+}
+main {
+  margin: 0 auto;
+  overflow:hidden;
+  padding: 2rem 0;
+  width:80%;
+}
+h1 {
+  color: $white;
+  font-family: $opensans;
+  font-size: $xlarge;
+  font-weight: 800;
+  line-height: 0.75;
+  text-transform: uppercase;
+}
+h2 {
+  color:$dkblue;
+  font-family: $robo;
+  font-size: $large;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+h3 {
+  @extend h2;
+  color: $mdblue;
+  font-size: $medium;
+}
+a {
+  color:$ltgray;
+  text-decoration: underline;
+  &:hover {
+    color:$mdblue;
+  }
+}
+
+//Body layout
+.main-section {
+  float:left;
+  padding-right: 3rem;
+  width:70%;
+  @include bp(mobile) {
+    float:none;
+    width:100%;
+    padding-right:0;
+  }
+}
+.right-sidebar {
+  float:right;
+  width:30%;
+  @include bp(mobile) {
+    float:none;
+    width:100%;
+  }
+}
+.posts {
+  @include clearboth;
+}

@@ -1,0 +1,40 @@
+.hero {
+  background:url($hero);
+  background-position: bottom left;
+  background-size:cover;
+  @include topround;
+  filter: saturate(2);
+  height: 45vh;
+  position:relative;
+  overflow:hidden;
+  @include bp(mobile) {
+    height:30vh;
+    border-radius: 0;
+  }
+  @include bp(tiny) {
+    height: 20vh;
+    border-radius: 0;
+  }
+}
+.hero-text {
+  text-align: center;
+  @include vcenter;
+  position:absolute;
+  width:100%;
+  @include bp(mobile) {
+    top:70%;
+  }
+  h1 {
+    @include bp(medium) {
+      font-size:3rem;
+    }
+    @include bp(mobile) {
+      font-size:2rem;
+    }
+  }
+  p {
+    color:$dkgray;
+    font-size:$xsmall;
+    padding-top:1rem;
+  }
+}

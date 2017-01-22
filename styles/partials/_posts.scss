@@ -1,0 +1,56 @@
+//posts
+.posts {
+  text-align: center;
+  @include bp(mobile) {
+    @include space-after;
+  }
+}
+.posts-container ul {
+  display:flex;
+  height: 30vh;
+  justify-content: center;
+  padding-top:1rem;
+  @include bp(mobile) {
+    flex-direction: column;
+    justify-content: space-around;
+    height: inherit;
+  }
+}
+.posts-container li {
+  display:block;
+  position:relative;
+  width:25%;
+  @include bluefilter;
+  @include bp(mobile) {
+    width:100%;
+    min-height:50vh;
+    margin: 1vh 0;
+    @include clearboth;
+  }
+  h3 {
+    bottom:0;
+    color:$dkblue;
+    left:0;
+    line-height: 1;
+    padding-bottom: 1rem;
+    padding-left:1rem;
+    position:absolute;
+    text-align: left;
+    z-index:10;
+  }
+  @each $curr-bg in $bgs {
+    $index: index($bgs, $curr-bg);
+
+    &:nth-of-type(#{$index}) {
+      background-image: url($curr-bg);
+      background-size: cover;
+      z-index: 5;
+    }
+  }
+  &:hover{
+    background-blend-mode: normal;
+  }
+  &:hover > h3 {
+    color: $white;
+  }
+}
